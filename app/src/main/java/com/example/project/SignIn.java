@@ -70,14 +70,12 @@ public class SignIn extends AppCompatActivity {
 
                 // Go to Home Page
                 Intent intent = new
-                        Intent(SignIn.this, HomePage.class);
+                        Intent(SignIn.this, Navigator.class);
                 SignIn.this.startActivity(intent);
             }
 
 
         });
-
-
 
         // Go to Sign Up page.
         signUpBtn.setOnClickListener(new View.OnClickListener() {

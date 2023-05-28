@@ -1,10 +1,5 @@
 package com.example.project;
-import static com.example.project.R.id.lastNameTxtLayout_SU;
 
-import static java.security.AccessController.getContext;
-import static java.util.Collections.list;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -16,7 +11,6 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.project.models.User;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -40,11 +34,18 @@ public class SignUp extends AppCompatActivity {
 
     Button signUpBtn;
     Button signInBtn;
-
     Spinner spinner;
 
-
-
+    // Adding continents to an array list.
+    public static final ArrayList<String> continents = new ArrayList<String>(){{
+        add("Asia");
+        add("Africa");
+        add("North America");
+        add("South America");
+        add("Antarctica");
+        add("Europe");
+        add("Australia");
+    }};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,17 +62,7 @@ public class SignUp extends AppCompatActivity {
         confirmPasswordLayout.setPasswordVisibilityToggleEnabled(false);
         signUpBtn = (Button) findViewById(R.id.signupBtn_SU);
         signInBtn = (Button) findViewById(R.id.signInBtn_SU) ;
-        spinner = (Spinner) findViewById(R.id.spinner);
-
-        // Adding continents to an array list.
-        ArrayList<String> continents = new ArrayList<>();
-        continents.add("Asia");
-        continents.add("Africa");
-        continents.add("North America");
-        continents.add("South America");
-        continents.add("Antarctica");
-        continents.add("Europe");
-        continents.add("Australia");
+        spinner = (Spinner) findViewById(R.id.sp);
 
 
 //        ArrayAdapter<String> continentsSpinner = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, continents);
@@ -87,12 +78,12 @@ public class SignUp extends AppCompatActivity {
         });
 
 
-
-
         // Validate user, then add to DB.
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                DataBaseHelper dataBaseHelper = new DataBaseHelper(view.getContext(),"TravelGuide",null,1);
+
 
                 if (validateInput() == false){
                     Toast toast = Toast.makeText(view.getContext(), "Invalid information.", Toast.LENGTH_SHORT);
@@ -100,6 +91,13 @@ public class SignUp extends AppCompatActivity {
                     return;
                 }
 
+
+                // Check if the user exists.
+                if(dataBaseHelper.checkIFUserExists(emailAddressText)){
+                    Toast toast = Toast.makeText(view.getContext(), "Account already exists.", Toast.LENGTH_SHORT);
+                    toast.show();
+                    return;
+                }
 
                 User user = new User();
                 user.setEmail(emailAddressText);
@@ -109,7 +107,6 @@ public class SignUp extends AppCompatActivity {
                 user.setPreferredTravelDestinations(spinner.getSelectedItem().toString());
 
                 // Save the user on database
-                DataBaseHelper dataBaseHelper = new DataBaseHelper(view.getContext(),"TravelGuide",null,1);
                 dataBaseHelper.insertUser(user);
 
                 // Inform that he account has been created.
@@ -132,10 +129,6 @@ public class SignUp extends AppCompatActivity {
                 SignUp.this.startActivity(intent);
             }
         });
-
-
-
-
     }
 
     protected boolean validateInput(){
