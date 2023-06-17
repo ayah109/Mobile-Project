@@ -34,18 +34,7 @@ public class SignUp extends AppCompatActivity {
 
     Button signUpBtn;
     Button signInBtn;
-    Spinner spinner;
 
-    // Adding continents to an array list.
-    public static final ArrayList<String> continents = new ArrayList<String>(){{
-        add("Asia");
-        add("Africa");
-        add("North America");
-        add("South America");
-        add("Antarctica");
-        add("Europe");
-        add("Australia");
-    }};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,20 +51,7 @@ public class SignUp extends AppCompatActivity {
         confirmPasswordLayout.setPasswordVisibilityToggleEnabled(false);
         signUpBtn = (Button) findViewById(R.id.signupBtn_SU);
         signInBtn = (Button) findViewById(R.id.signInBtn_SU) ;
-        spinner = (Spinner) findViewById(R.id.sp);
 
-
-//        ArrayAdapter<String> continentsSpinner = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, continents);
-
-        spinner.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, continents) {
-            @Override
-            public View getView(int position, View convertView, ViewGroup parent) {
-                TextView textView = (TextView) super.getView(position, convertView, parent);
-                textView.setTextColor(Color.BLACK);
-
-                return textView;
-            }
-        });
 
 
         // Validate user, then add to DB.
@@ -104,7 +80,7 @@ public class SignUp extends AppCompatActivity {
                 user.setFirstName(firstNameText);
                 user.setLastName(lastNameText);
                 user.setPassword(passwordText);
-                user.setPreferredTravelDestinations(spinner.getSelectedItem().toString());
+
 
                 // Save the user on database
                 dataBaseHelper.insertUser(user);

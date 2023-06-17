@@ -67,11 +67,7 @@ public class profile extends Fragment {
         emailEditText = (EditText) view.findViewById(R.id.emailEditText);
         passwordEditText = (EditText) view.findViewById(R.id.newPasswordEditText);
         saveButton = (Button) view.findViewById(R.id.saveButton);
-        spinner = (Spinner) view.findViewById(R.id.spinner);
-        continentsSpinner = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, SignUp.continents) {
 
-        };
-        spinner.setAdapter(continentsSpinner);
 
         UpdateData();
 
@@ -93,13 +89,13 @@ public class profile extends Fragment {
                 secondName = secondNameEditText.getText().toString();
                 if(!passwordEditText.getText().toString().equals(""))
                     password = passwordEditText.getText().toString();
-                favDestination = spinner.getSelectedItem().toString();
+
 
                 // Validate Data.
                 if(validateInput()) {
 
                     // Update on database.
-                    dataBaseHelper.updateUserInfo(email, firstName, secondName, password, favDestination);
+                    dataBaseHelper.updateUserInfo(email, firstName, secondName, password);
 
                     // Toast message.
                     Toast toast = Toast.makeText(view.getContext(), "Updated :)", Toast.LENGTH_SHORT);
@@ -118,7 +114,6 @@ public class profile extends Fragment {
                 firstName = userData.getString(1);
                 secondName = userData.getString(2);
                 password = userData.getString(3);
-                favDestination = userData.getString(4);
             }
         }
         // Fill them into the UI
@@ -126,10 +121,7 @@ public class profile extends Fragment {
         firstNameEditText.setText(firstName);
         secondNameEditText.setText(secondName);
         passwordEditText.setText("");
-        if (favDestination != null) {
-            int spinnerPosition = continentsSpinner.getPosition(favDestination);
-            spinner.setSelection(spinnerPosition);
-        }
+
     }
 
     protected boolean validateInput(){

@@ -11,4 +11,19 @@
     <string name="menu_home">Home</string>
     <string name="menu_profile">Profile</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_room">Room</string>
+
+    <string-array name="desired_prices">
+        <item>100-200</item>
+        <item>200-350</item>
+        <item>more than 350</item>
+    </string-array>
+
+    <string-array name="guest_counts">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4 or more</item>
+
+    </string-array>
 </resources>

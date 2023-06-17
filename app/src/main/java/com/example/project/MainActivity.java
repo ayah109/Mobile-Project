@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         sharedPrefManager =SharedPrefManager.getInstance(MainActivity.this);
         signUp = new SignUp();
         // Check whether the user is logged in or not.

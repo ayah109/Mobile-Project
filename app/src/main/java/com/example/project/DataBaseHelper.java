@@ -20,7 +20,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         // Create User table
         sqLiteDatabase.execSQL("CREATE TABLE USER(EMAIL TEXT PRIMARY KEY, FIRST_NAME TEXT, LAST_NAME TEXT," +
-                " PASSWORD TEXT, preferredTravelDestinations TEXT\n )");
+                " PASSWORD TEXT\n )");
 
     }
     @Override
@@ -35,7 +35,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         contentValues.put("FIRST_NAME", user.getFirstName());
         contentValues.put("LAST_NAME", user.getLastName());
         contentValues.put("PASSWORD", user.getPassword());
-        contentValues.put("preferredTravelDestinations", user.getPreferredTravelDestinations());
         sqLiteDatabase.insert("USER", null, contentValues);
     }
 
@@ -61,13 +60,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return sqLiteDatabase.rawQuery("Select * from USER where EMAIL = ? ", new String[] {email});
 
     }
-    public void updateUserInfo(String email, String firstName, String secondName, String password, String favDestination){
+    public void updateUserInfo(String email, String firstName, String secondName, String password){
         SQLiteDatabase db= getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("FIRST_NAME", firstName);
         values.put("LAST_NAME", secondName);
         values.put("PASSWORD", password);
-        values.put("preferredTravelDestinations", favDestination);
         db.update("USER", values, "EMAIL = ?", new String[]{ email});
         db.close();
     }

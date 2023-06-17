@@ -21,9 +21,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="5dp"
-            android:foregroundTint="#05988B"
+            android:foregroundTint="@color/purple_500"
             android:text="Sign Up Now"
-            android:textColor="#05988B"
+            android:textColor="@color/purple_500"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -148,15 +148,6 @@
                 android:textColor="#050000" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/favContinentsLable"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:padding="2dp"
-            android:text="Preferred travel destinations"
-            android:textColor="#040000" />
-
         <Spinner
             android:id="@+id/sp"
             android:layout_width="match_parent"
@@ -171,7 +162,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginVertical="10dp"
-            android:backgroundTint="#05988B"
+            android:backgroundTint="@color/purple_500"
             android:text="Sign Up"
             android:textColor="#FFFFFF" />
 
@@ -201,7 +192,7 @@
                 android:padding="0px"
                 android:text="Sign In"
                 android:textAlignment="center"
-                android:textColor="#05988B"
+                android:textColor="@color/purple_500"
                 android:textSize="12sp" />
 
         </LinearLayout>

@@ -8,27 +8,19 @@ public class User {
     private String firstName;
     private String lastName;
     private String password;
-    private String preferredTravelDestinations;
 
-    public User(String email, String firstName, String lastName, String password, String preferredTravelDestinations) {
+    public User(String email, String firstName, String lastName, String password) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
-        this.preferredTravelDestinations = preferredTravelDestinations;
+
     }
 
     public User() {
 
     }
 
-    public String getPreferredTravelDestinations() {
-        return preferredTravelDestinations;
-    }
-
-    public void setPreferredTravelDestinations(String preferredTravelDestinations) {
-        this.preferredTravelDestinations = preferredTravelDestinations;
-    }
 
     public String getEmail() {
         return email;

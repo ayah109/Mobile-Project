@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Rooms Reservation"
+        android:textColor="@color/black"
+        android:textSize="34sp" />
+
+    <Spinner
+        android:id="@+id/spinnerGuestCount"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:entries="@array/guest_counts"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+         />
+
+    <Spinner
+        android:id="@+id/spinnerDesiredPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/desired_prices"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+         />
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:text="Search" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/single" />
+
+        <Button
+            android:id="@+id/btnSingle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#80FF0000"
+            android:text="Single"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+</FrameLayout>
+
+<FrameLayout
+android:layout_width="match_parent"
+android:layout_height="150dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp">
+
+<ImageView
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:scaleType="centerCrop"
+android:src="@drawable/d" />
+
+    <Button
+        android:id="@+id/btnDouble"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#80FF0000"
+        android:text="Double"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    </FrameLayout>
+
+<FrameLayout
+android:layout_width="match_parent"
+android:layout_height="150dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp">
+
+<ImageView
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:scaleType="centerCrop"
+android:src="@drawable/suite" />
+
+    <Button
+        android:id="@+id/btnSuite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#80FF0000"
+        android:text="Suite"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    </FrameLayout>
+
+    </LinearLayout>
