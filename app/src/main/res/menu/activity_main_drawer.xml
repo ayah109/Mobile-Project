@@ -21,5 +21,15 @@
             android:id="@+id/room"
             android:icon="@android:drawable/checkbox_on_background"
             android:title="@string/menu_room" />
+
+        <item
+            android:id="@+id/room_service"
+            android:icon="@drawable/ic_baseline_room_service_24"
+            android:title="@string/room_services" />
+
+        <item
+            android:id="@+id/cart"
+            android:icon="@drawable/ic_baseline_shopping_cart_24"
+            android:title="@string/Cart" />
     </group>
 </menu>

@@ -28,4 +28,16 @@
         android:name="com.example.project.ui.room.room"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_room" />
+
+    <fragment
+        android:id="@+id/room_service"
+        android:name="com.example.project.ui.room_service.RoomServiceFragment"
+        android:label="@string/room_services"
+        tools:layout="@layout/fragment_room_service" />
+
+    <fragment
+        android:id="@+id/cart"
+        android:name="com.example.project.ui.Cart.cart"
+        android:label="@string/Cart"
+        tools:layout="@layout/fragment_cart" />
 </navigation>
