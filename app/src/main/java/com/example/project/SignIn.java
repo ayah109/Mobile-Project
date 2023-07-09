@@ -37,6 +37,7 @@ public class SignIn extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
         sharedPrefManager =SharedPrefManager.getInstance(SignIn.this);
+
         emailAddressLayout = (TextInputLayout) findViewById(R.id.emailTxtLayout_SI);
         passwordLayout = (TextInputLayout) findViewById(R.id.passwordTxtLayout_SI);
         passwordLayout.setPasswordVisibilityToggleEnabled(false);
@@ -44,6 +45,18 @@ public class SignIn extends AppCompatActivity {
         signInBtn = (Button) findViewById(R.id.signInBtn_SI) ;
         checkBox = (CheckBox) findViewById(R.id.rememberMeCHB);
 
+        // Get data from shared preference
+        String emailInSP = sharedPrefManager.readString("email","");
+        String passInSP = sharedPrefManager.readString("password","");
+        String checked = sharedPrefManager.readString("checkBox","false");
+
+        // Check if the check box was check or not
+        if (checked.equals("true")) {
+            checkBox.setChecked(true);
+            emailAddressLayout.getEditText().setText(emailInSP);
+            passwordLayout.getEditText().setText(passInSP);
+        }else
+            checkBox.setChecked(false);
 
         // Validate user
         signInBtn.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +78,9 @@ public class SignIn extends AppCompatActivity {
                 if(checkBox.isChecked()){
                     sharedPrefManager.writeString("email",emailAddressText);
                     sharedPrefManager.writeString("password",passwordText);
+                    sharedPrefManager.writeString("checkBox","true");
+                } else {
+                    sharedPrefManager.writeString("checkBox","false");
                 }
 
 

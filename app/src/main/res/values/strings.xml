@@ -12,11 +12,23 @@
     <string name="menu_profile">Profile</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_room">Room</string>
+    <string name="choose_duration_prompt">Choose Duration</string>
+    <string name="go_to_services">Services</string>
+    <string name="enter_date_hint">Enter Date</string>
+
+
 
     <string-array name="desired_prices">
         <item>100-200</item>
         <item>200-350</item>
         <item>more than 350</item>
+    </string-array>
+
+    <string-array name="durations">
+        <item>1 day</item>
+        <item>3 days</item>
+        <item>7 days</item>
+        <!-- Add more duration options as needed -->
     </string-array>
 
     <string-array name="guest_counts">

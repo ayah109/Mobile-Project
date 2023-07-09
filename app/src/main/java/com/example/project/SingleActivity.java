@@ -27,8 +27,10 @@ public class SingleActivity extends AppCompatActivity {
 
         pictureList = new ArrayList<>();
         // Add your pictures and text to the pictureList
-        pictureList.add(new PictureItem("Picture 1", "https://cdn.loewshotels.com/loewshotels.com-2466770763/cms/cache/v2/5f5a6dfa24c23.jpg/1920x1080/fit/80/6bdfd71c421c7cafd9695770e40230e9.webp"));
-        pictureList.add(new PictureItem("Picture 2", "https://example.com/image2.jpg"));
+        pictureList.add(new PictureItem("City view\n 50*50 m\nhh", "https://cdn.loewshotels.com/loewshotels.com-2466770763/cms/cache/v2/5f5a6dfa24c23.jpg/1920x1080/fit/80/6bdfd71c421c7cafd9695770e40230e9.webp"));
+        pictureList.add(new PictureItem("City view\n 50*50 m\nhh", "https://cdn.loewshotels.com/loewshotels.com-2466770763/cms/cache/v2/5f5a6dfa24c23.jpg/1920x1080/fit/80/6bdfd71c421c7cafd9695770e40230e9.webp"));
+        pictureList.add(new PictureItem("City view\n 50*50 m\nhh", "https://cdn.loewshotels.com/loewshotels.com-2466770763/cms/cache/v2/5f5a6dfa24c23.jpg/1920x1080/fit/80/6bdfd71c421c7cafd9695770e40230e9.webp"));
+        pictureList.add(new PictureItem("City view\n 50*50 m\nhh", "https://cdn.loewshotels.com/loewshotels.com-2466770763/cms/cache/v2/5f5a6dfa24c23.jpg/1920x1080/fit/80/6bdfd71c421c7cafd9695770e40230e9.webp"));
         // Add more items as needed
 
         adapter = new PictureAdapter(this, pictureList);
